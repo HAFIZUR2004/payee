@@ -32,10 +32,3 @@ document.getElementById('loginButton').addEventListener('click',function(){
 
 
 
-echo "# payee" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/HAFIZUR2004/payee.git
-git push -u origin main
