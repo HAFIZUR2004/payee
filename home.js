@@ -1,4 +1,7 @@
 const validPin = 6437
+
+// add money-feture
+
 document.getElementById("add-money-btn").addEventListener
 ('click',function(e){
     e.preventDefault()
@@ -30,6 +33,40 @@ document.getElementById("add-money-btn").addEventListener
 })
 
 
+
+
+
+
+// cash-out-section
+
+document.getElementById("withdraw-money-btn")
+.addEventListener("click",function(e){
+    e.preventDefault()
+    
+
+    const agentNumber = document.getElementById("agent-number").value
+    const amount      =parseInt(document.getElementById("withdraw-cash-amount").value)
+    const pInNumber   =parseInt(document.getElementById("pin-numbers").value)
+    
+    if(agentNumber.length <11){
+        alert("Please provide valid number ")
+        return;
+    }
+    if(pInNumber !== validPin){
+        alert("Please Enter Valide Pin Number")
+    return;
+    }
+
+
+    const availBalance =parseInt(document.getElementById("available-balance").innerText)
+    const newTotalNewBalancee =availBalance-amount;
+    console.log(newTotalNewBalancee);
+    document.getElementById("available-balance").innerText =newTotalNewBalancee
+})
+
+
+
+
 // toggling feature
 
 
@@ -41,3 +78,6 @@ document.getElementById("add-money-button").addEventListener("click",function(){
     document.getElementById("cash-out-parent").style.display = "none"
     document.getElementById("add-money-parent").style.display ="block"
 })
+
+
+
